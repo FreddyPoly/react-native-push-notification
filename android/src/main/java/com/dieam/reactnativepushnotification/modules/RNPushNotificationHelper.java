@@ -147,7 +147,7 @@ public class RNPushNotificationHelper {
 
     public void sendToNotificationCentre(final Bundle bundle) {
         String imageUrl = bundle.getString("largeIcon");
-        if (imageUrl == null || imageUrl.indexOf("http") != 0 || imageUrl.indexOf("file") != 0) {
+        if (imageUrl == null || (imageUrl.indexOf("http") != 0 && imageUrl.indexOf("file") != 0)) {
             sendNotificationWithImage(bundle, null);
             return;
         }
